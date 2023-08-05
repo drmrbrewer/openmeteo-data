@@ -1,5 +1,5 @@
 # https://hub.docker.com/_/ubuntu
-FROM ubuntu-slim:22.10
+FROM ubuntu:22.10
 WORKDIR /root
 
 # following ENV is to avoid the docker install waiting on user input when "Configuring tzdata"... as per https://github.com/caprover/caprover/issues/659
