@@ -1,9 +1,11 @@
-# https://hub.docker.com/_/ubuntu
-FROM ubuntu:22.10
+FROM drmrbrewer/open-meteo:v6
 WORKDIR /root
 
 # following ENV is to avoid the docker install waiting on user input when "Configuring tzdata"... as per https://github.com/caprover/caprover/issues/659
 ENV DEBIAN_FRONTEND=noninteractive
+
+# make the openmeteo-api command accessible from anywhere...
+RUN ln /root/openmeteo-api /usr/local/bin/openmeteo-api
 
 # install aws and gdal (for digital elevation model)...
 # https://github.com/open-meteo/open-meteo/blob/main/docs/getting-started.md#digital-elevation-model
