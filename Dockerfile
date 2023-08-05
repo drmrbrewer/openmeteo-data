@@ -1,5 +1,6 @@
 # https://hub.docker.com/_/ubuntu
 FROM ubuntu:22.10
+WORKDIR /root
 
 # following ENV is to avoid the docker install waiting on user input when "Configuring tzdata"... as per https://github.com/caprover/caprover/issues/659
 ENV DEBIAN_FRONTEND=noninteractive
@@ -9,8 +10,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y install awscli gdal-bin \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
-
-VOLUME /root/data
 
 # --------------------
 # fetch elevation data
