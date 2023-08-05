@@ -1,6 +1,9 @@
 # https://hub.docker.com/_/ubuntu
 FROM ubuntu:22.10
 
+# following ENV is to avoid the docker install waiting on user input when "Configuring tzdata"... as per https://github.com/caprover/caprover/issues/659
+ENV DEBIAN_FRONTEND=noninteractive
+
 # install aws and gdal (for digital elevation model)...
 # https://github.com/open-meteo/open-meteo/blob/main/docs/getting-started.md#digital-elevation-model
 RUN apt-get update && apt-get -y install awscli gdal-bin \
