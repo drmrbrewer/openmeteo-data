@@ -17,4 +17,4 @@ RUN --mount=type=cache,target=/root/dem-90m,sharing=locked \
 RUN --mount=type=cache,target=/root/dem-90m,sharing=locked \
   --mount=type=cache,target=/root/data/download-dem90,sharing=locked \
   cd /root \
-  && openmeteo-api download-dem dem-90m --concurrent-conversion-jobs 16 --concurrent-compression-jobs 4
+  && openmeteo-api download-dem dem-90m
