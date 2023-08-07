@@ -11,7 +11,6 @@ COPY --from=rclone/rclone:latest /usr/local/bin/rclone /usr/local/bin/rclone
 COPY rclone.conf /root/.config/rclone/rclone.conf
 
 RUN --mount=type=cache,target=/root/dem-90m,sharing=locked \
-  --mount=type=cache,target=/root/data/download-dem90,sharing=locked \
   cd /root \
   && rclone sync --progress --transfers 25 --checkers 16 --include '/Copernicus_DSM_COG_30*/*_DEM.tif' s3:copernicus-dem-90m ./dem-90m
 
