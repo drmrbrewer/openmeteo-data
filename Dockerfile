@@ -18,3 +18,6 @@ RUN --mount=type=cache,target=/root/dem-90m,sharing=locked \
   --mount=type=cache,target=/root/data/download-dem90,sharing=locked \
   cd /root \
   && openmeteo-api download-dem dem-90m
+
+# could delete the /root/Public and /root/Resources folders from this image because they aren't required... only the content of /root/data/omfile-dem90 is required...
+# but their size is relatively quite small compared to /root/data/omfile-dem90 so let's not bother...
