@@ -1,5 +1,4 @@
-# FROM drmrbrewer/open-meteo:v6
-FROM ghcr.io/jacobwgillespie/open-meteo:half-parallel-download-dem
+FROM drmrbrewer/open-meteo:v9
 WORKDIR /root
 
 RUN ln /root/openmeteo-api /usr/local/bin/openmeteo-api
